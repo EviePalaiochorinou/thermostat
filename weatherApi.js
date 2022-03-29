@@ -20,7 +20,7 @@ class WeatherApi {
 };
 
 export { WeatherApi };
-const weather = new WeatherApi();
-weather.fetchWeatherData('London', (weatherResponse) => {
-  console.log(weatherResponse);
-});  
+
+// weather.fetchWeatherData('London', (weatherResponse) => {
+//   console.log(weatherResponse);
+// });  

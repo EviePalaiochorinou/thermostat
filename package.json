@@ -2,15 +2,23 @@
   "name": "thermostat",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "thermostat.js",
   "type": "module",
   "scripts": {
     "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel": "^6.23.0",
+    "babel-jest": "^27.5.1",
+    "babel-node": "^0.0.1-security",
     "dotenv": "^16.0.0",
     "got": "^12.0.3",
     "jest": "^27.5.1"
