@@ -1,4 +1,6 @@
-import { Thermostat } from './thermostat.js';
+import { Thermostat } from '../thermostat.js';
+
+jest.mock("../weatherApi.js");
 
 describe('Thermostat', () => {
     it('has a default temperature', () => {
@@ -47,6 +49,17 @@ describe('Thermostat', () => {
         }
         expect(thermostat.getEnergyUsage()).toEqual('low-usage');
       });
-      //mock the weather class
-      //test the 'setCity' function
+      it("changes temperature to set city", () => {
+        let api = new WeatherApi();
+        let thermostat = new Thermostat(api);
+        let fakeWeatherData = { main: { temp: 18 } };
+    
+        api.fetchWeatherData.mockImplementation((city, callback) => {
+          callback(fakeWeatherData);
+        });
+    
+        thermostat.setCity("London");
+    
+        expect(thermostat.getTemperature()).toBe(18);
+      });
 });
