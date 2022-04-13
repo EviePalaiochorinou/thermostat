@@ -8,9 +8,9 @@
 - $ npm install
 - You may need to also run $ npm install esbuild
 
-2. In thermostat-backend/, run:
-- $ node index.js
+2. In server/, run:
+- $ node web.js
 
-3. In thermostat-client-tc/, run:
+3. In client/, run:
 - $ npm run build
 - Open index.html and interact with the SPA
